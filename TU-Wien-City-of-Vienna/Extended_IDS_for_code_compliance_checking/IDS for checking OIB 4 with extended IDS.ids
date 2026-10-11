@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IDS for checking OIB 4 with extended IDS</title>
+        <copyright>TU Wien</copyright>
+        <date>2025-10-15</date>
+    </info>
+    <specifications>
+        <specification name="OIB 4 2/8/7 - Doors with PanicExitDevice" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCCOUNTMEASURE">
+                        <propertySet>
+                            <simpleValue>Pset_SpaceOccupancyRequirements</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>OccupancyNumberPeak</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:double">
+                                <xs:minInclusive value="120" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>NutzungseinheitGWR</simpleValue>
+                        </baseName>
+                        <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Industrie und Lagerei" />
+                            <xs:enumeration value="Gemeinschaftliche Nutzfläche" />
+                            <xs:enumeration value="Groß- Einzelhandelsflächen" />
+                            <xs:enumeration value="Kultur, Freizeit, Bildungs- oder Gesundheitswesen" />
+                            <xs:enumeration value="Hotel u. a. Einheiten fuer kurzfristige Beherbergung" />
+                            <xs:enumeration value="Kirche, sonstige Sakralbauten" />
+                        </xs:restriction>
+                        </value>
+                    </property>
+                    <property dataType="IFCBOOLEAN">
+                        <propertySet>
+                            <simpleValue>Pset_SpaceCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>PubliclyAccessible</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_DoorSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IDNextDoor</simpleValue>
+                    </baseName>
+                </property>
+            </applicability>
+            <requirements>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>WienBV_DoorSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>PanicExitDevice</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 7/4/1 - Handicapped-accessible residential buildings (1/2)" ifcVersion="IFC4" description="graphical assistance!" instructions="Publicly accessible areas of handicapped-accessible residential buildings or parts thereof must be barrier-free.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>PubliclyAccessible</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification> 
+        <specification name="OIB 4 7/4/1 - Handicapped-accessible residential buildings (2/2)" ifcVersion="IFC4" description="partially automated!">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCBOOLEAN">
+                        <propertySet>
+                            <simpleValue>Pset_SpaceCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>HandicapAccessible</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>Pset_SpaceCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>WidmungBehoerde</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Wohnen und Aufenthalt</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>LoadBearing</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>false</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>WienBV_WallSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>AnpassbarBarrierefreiheit</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </requirements>
+        </specification> 
+    </specifications>
+</ids>

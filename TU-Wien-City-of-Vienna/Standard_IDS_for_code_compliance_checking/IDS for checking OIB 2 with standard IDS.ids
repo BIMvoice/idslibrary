@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IDS for checking OIB 2 with standard IDS</title>
+        <copyright>TU Wien</copyright>
+        <date>2025-10-15</date>
+    </info>
+    <specifications>
+        <specification name="OIB 2 3/9/1 - Rooms with an increased fire risk" ifcVersion="IFC4" description="graphical assistance!" instructions="The following rooms are considered to be rooms with an increased fire risk according to 3/9/1.">
+            <applicability minOccurs="0" maxOccurs="0">
+                 <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Abfallsammelraum" />
+                                <xs:enumeration value="Brennstofflager" />
+                                <xs:enumeration value="Batterieraum" />
+                                <xs:enumeration value="Müllraum" />
+                                <xs:enumeration value="Heizlager" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/9/11 - Rooms with an increased fire risk" ifcVersion="IFC4" description="graphical assistance!" instructions="Effective ventilation to the outside must be checked, depending on the battery technology used.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SpaceName</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Batterieraum</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/10/1 - First and advanced fire extinguishing aid" ifcVersion="IFC4" description="graphical assistance!" instructions="If required for the intended use, but in any case in buildings with apartments or business units, sufficient and suitable first fire extinguishing aid (e.g., portable fire extinguishers) must be kept on hand.">
+            <applicability minOccurs="0" maxOccurs="0">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCFIRESUPPRESSIONTERMINAL</simpleValue>
+                        </name>
+                    </entity>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>   
+    </specifications>
+</ids>

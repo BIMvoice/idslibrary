@@ -2,9 +2,13 @@
 
 Information model assurance checks.
 
-## Where to get the files
+## The publisher's own page
 
 - [GitHub: DFE-EducationEstates/InformationModelAssurance](https://github.com/DFE-EducationEstates/InformationModelAssurance)
+
+## Files in this folder
+
+`InformationModelAssurance/` holds the 1,868 IDS files from the publisher's repository, unchanged, in the publisher's folder layout, with the publisher's licence file. Copied under CC BY 4.0, with credit to the UK Department for Education.
 
 ## Facts
 
@@ -25,9 +29,9 @@ As found on 11 October 2026. Follow the link for the current state.
 
 ## Terms for reuse
 
-The publisher licenses the files under Creative Commons Attribution 4.0 (CC BY 4.0): they may be copied and reused with credit. Read the licence on the publisher's page before you redistribute. This folder links to the publisher; copies may be added here later, with credit.
+The publisher licenses the files under Creative Commons Attribution 4.0 (CC BY 4.0): they may be copied and reused with credit. Read the licence on the publisher's page before you redistribute. Unchanged copies are in this folder, with credit.
 
 ## Using these files
 
-1. Download them from the publisher's page.
+1. Take a file from this folder, or the current version from the publisher's page.
 2. Open a file in [idsbench](https://github.com/BIMvoice/idsbench) or another IDS tool to read it, check it, and run it against an IFC model.

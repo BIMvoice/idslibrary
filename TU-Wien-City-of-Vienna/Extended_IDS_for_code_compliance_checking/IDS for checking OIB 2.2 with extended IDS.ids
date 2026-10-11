@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IDS for checking OIB 2.2 with extended IDS</title>
+        <copyright>TU Wien</copyright>
+        <date>2025-10-15</date>
+    </info>
+    <specifications>
+        <specification name="OIB 2.2 2/1/2 - Covered parking spaces" ifcVersion="IFC4" description="graphical assistance!" instructions="Covered parking spaces must be classified according to 2/1/2.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                    <predefinedType>
+                        <simpleValue>PARKING</simpleValue>
+                    </predefinedType>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="IFCDOOR" />
+                                <xs:enumeration value="IFCWINDOW" />
+                                <xs:enumeration value="IFCCURTAINWALL" />
+                                <xs:enumeration value="IFCWALL" />
+                                <xs:enumeration value="IFCCOVERING" />
+                                <xs:enumeration value="IFCRAILING" />
+                            </xs:restriction>
+                        </name>
+                    </entity>
+                </partOf>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>KFZVerkehrsflaechenArt</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Überdacht</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>                
+            </requirements>
+        </specification>
+        <specification name="OIB 2.2 5/1/2 - Non-load-bearing walls in garages with a net floor area of more than 250 m²" ifcVersion="IFC4" description="fully automated!">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>KFZVerkehrsflaechenArt</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Garage</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCAREAMEASURE">
+                        <propertySet>
+                            <simpleValue>Qto_SpaceBaseQuantities</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>NetFloorArea</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:double">
+                                <xs:minExclusive value="250" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>LoadBearing</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>false</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>    
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SurfaceSpreadOfFlame</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>A2</simpleValue>
+                    </value>
+                </property>            
+            </requirements>
+        </specification>
+        <specification name="OIB 2.2 5/3/1 - Doors in garages with a net floor area of more than 250 m² (1/2)" ifcVersion="IFC4" description="partially automated!">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELVOIDSELEMENT IFCRELFILLSELEMENT">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCWALL</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCBOOLEAN">
+                        <propertySet>
+                            <simpleValue>Pset_WallCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>Compartmentation</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>KFZVerkehrsflaechenArt</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Garage</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCAREAMEASURE">
+                        <propertySet>
+                            <simpleValue>Qto_SpaceBaseQuantities</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>NetFloorArea</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:double">
+                                <xs:minExclusive value="250" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>    
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_DoorSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SurfaceSpreadOfFlame</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>A2</simpleValue>
+                    </value>
+                </property>        
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI2 30-C" />
+                            <xs:enumeration value="EI2 60-C" />     
+                            <xs:enumeration value="EI2 90-C" />           
+                            <xs:enumeration value="EI2 30-C-Sm" />
+                            <xs:enumeration value="EI2 60-C-Sm" />     
+                            <xs:enumeration value="EI2 90-C-Sm" />  
+                        </xs:restriction>
+                    </value>
+                </property>       
+            </requirements>
+        </specification>
+        <specification name="OIB 2.2 5/3/1 - Doors in garages with a net floor area of more than 250 m² (2/2)" ifcVersion="IFC4" description="graphical assistance!" instructions="Additional requirements according to 5/3/1 must be checked manually.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELVOIDSELEMENT IFCRELFILLSELEMENT">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCWALL</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCBOOLEAN">
+                        <propertySet>
+                            <simpleValue>Pset_WallCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>Compartmentation</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>KFZVerkehrsflaechenArt</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Garage</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCAREAMEASURE">
+                        <propertySet>
+                            <simpleValue>Qto_SpaceBaseQuantities</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>NetFloorArea</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:double">
+                                <xs:minExclusive value="250" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>    
+            </requirements>
+        </specification>
+        <specification name="OIB 2.2 5/3/2 - Doors in garages with a net floor area of more than 250 m²" ifcVersion="IFC4" description="fully automated!">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Hauptgang" />
+                                <xs:enumeration value="Treppenhaus" />     
+                            </xs:restriction>
+                        </value>
+                    </property>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>KFZVerkehrsflaechenArt</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Garage</simpleValue>
+                        </value>
+                    </property>
+                    <multiElementProcessing>differentElementsForEachProperty</multiElementProcessing>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>KFZVerkehrsflaechenArt</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Garage</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCAREAMEASURE">
+                        <propertySet>
+                            <simpleValue>Qto_SpaceBaseQuantities</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>NetFloorArea</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:double">
+                                <xs:minExclusive value="250" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>           
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI2 30-C" />
+                            <xs:enumeration value="EI2 60-C" />     
+                            <xs:enumeration value="EI2 90-C" />           
+                            <xs:enumeration value="EI2 30-C-Sm" />
+                            <xs:enumeration value="EI2 60-C-Sm" />     
+                            <xs:enumeration value="EI2 90-C-Sm" />  
+                        </xs:restriction>
+                    </value>
+                </property>       
+            </requirements>
+        </specification>   
+        <specification name="OIB 2.2 5/7 - Fireplaces and exhaust systems" ifcVersion="IFC4" description="graphical assistance!" instructions="The installation of fireplaces and the arrangement of cleaning openings for exhaust systems are not permitted.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCHIMNEY</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>KFZVerkehrsflaechenArt</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Garage</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCAREAMEASURE">
+                        <propertySet>
+                            <simpleValue>Qto_SpaceBaseQuantities</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>NetFloorArea</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:double">
+                                <xs:minExclusive value="250" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>               
+            </requirements>
+        </specification>   
+    </specifications>
+</ids>

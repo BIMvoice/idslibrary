@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IDS for checking OIB 2.3 2 with extended IDS</title>
+        <copyright>TU Wien</copyright>
+        <date>2025-10-15</date>
+    </info>
+    <specifications>
+        <specification name="OIB 2.3 2/4/2 - Fire compartments (1/2)" ifcVersion="IFC4" description="graphical assistance!" instructions="Only to be checked if the escape level exceeds 22 m. External walls and slabs must fulfill the requirements according to 2/2/7.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELCONTAINEDINSPATIALSTRUCTURE">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsExternal</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2.3 2/4/2 - Fire compartments (2/2)" ifcVersion="IFC4" description="graphical assistance!" instructions="Only to be checked if the escape level exceeds 22 m. External walls and slabs must fulfill the requirements according to 2/2/7.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSLAB</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELCONTAINEDINSPATIALSTRUCTURE">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2.3 2/7/1 b) - Elevators" ifcVersion="IFC4" description="graphical assistance!" instructions="Only to be checked if the escape level exceeds 22 m. Walls bounding elevators must fulfill the requirements according to 2/7/1.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Aufzug</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2.3 2/7/6 - Elevators (1/2)" ifcVersion="IFC4" description="fully automated!" instructions="Only to be checked if the escape level exceeds 22 m.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="IFCWALL" />
+                            <xs:enumeration value="IFCSLAB" />
+                        </xs:restriction>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Triebwerksraum</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Aufzug</simpleValue>
+                        </value>
+                    </property>
+                    <multiElementProcessing>noElementMayComply</multiElementProcessing>
+                </partOf>                     
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="Pset_.*Common"/>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SurfaceSpreadOfFlame</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>A2</simpleValue>
+                    </value>
+                </property>        
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="Pset_.*Common"/>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="REI 90" />
+                            <xs:enumeration value="REI 120" />     
+                            <xs:enumeration value="REI 180" />      
+                        </xs:restriction>
+                    </value>
+                </property>   
+            </requirements>
+        </specification>
+        <specification name="OIB 2.3 2/7/6 - Elevators (2/2)" ifcVersion="IFC4" description="fully automated!" instructions="Only to be checked if the escape level exceeds 22 m.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSLAB</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Triebwerksraum</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Aufzug</simpleValue>
+                        </value>
+                    </property>
+                    <multiElementProcessing>differentElementsForEachProperty</multiElementProcessing>
+                </partOf>                
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="Pset_.*Common"/>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SurfaceSpreadOfFlame</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>A2</simpleValue>
+                    </value>
+                </property>        
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="Pset_.*Common"/>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="R 90" />
+                            <xs:enumeration value="R 120" />     
+                            <xs:enumeration value="R 180" /> 
+                            <xs:enumeration value="REI 90" />
+                            <xs:enumeration value="REI 120" />     
+                            <xs:enumeration value="REI 180" />      
+                        </xs:restriction>
+                    </value>
+                </property>   
+            </requirements>
+        </specification>
+    </specifications>
+</ids>

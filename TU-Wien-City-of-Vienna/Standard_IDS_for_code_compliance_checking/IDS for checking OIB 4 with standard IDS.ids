@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IDS for checking OIB 4 with standard IDS</title>
+        <copyright>TU Wien</copyright>
+        <date>2025-10-15</date>
+    </info>
+    <specifications>
+        <specification name="OIB 4 2/1/1 - Access and escape routes" ifcVersion="IFC4" description="graphical assistance!" instructions="In buildings or parts of buildings that are to be designed to be handicapped accessible, at least one entrance, namely the main entrance or an entrance in its immediate vicinity, must be handicapped accessible and without steps.">
+            <applicability minOccurs="0" maxOccurs="0">
+                 <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_DoorSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>TuerTyp</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="HauptzugangBarrierefrei" />
+                            <xs:enumeration value="Hauptzugang" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/1/5 - Access and escape routes (1/3)" ifcVersion="IFC4" description="graphical assistance!" instructions="All three specifications must be displayed together to check the requirements according to 2/1/5.">
+            <applicability minOccurs="0" maxOccurs="0">
+                 <entity>
+                    <name>
+                        <simpleValue>IFCRAMP</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/1/5 - Access and escape routes (2/3)" ifcVersion="IFC4" description="graphical assistance!" instructions="All three specifications must be displayed together to check the requirements according to 2/1/5.">
+            <applicability minOccurs="0" maxOccurs="0">
+                 <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property>
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SpaceName</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Aufzug</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/1/5 - Access and escape routes (3/3)" ifcVersion="IFC4" description="graphical assistance!" instructions="All three specifications must be displayed together to check the requirements according to 2/1/5.">
+            <applicability minOccurs="0" maxOccurs="0">
+                 <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>HandicapAccesible</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/1/6 - Access and escape routes (1/3) " ifcVersion="IFC4" description="graphical assistance!" instructions="For places of assembly, all three specifications must be displayed together to check the requirements according to 2/1/6.">
+            <applicability minOccurs="0" maxOccurs="0">
+                 <entity>
+                    <name>
+                        <simpleValue>IFCRAMP</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/1/6 - Access and escape routes (2/3)" ifcVersion="IFC4" description="graphical assistance!" instructions="For places of assembly, all three specifications must be displayed together to check the requirements according to 2/1/6.">
+            <applicability minOccurs="0" maxOccurs="0">
+                 <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property>
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SpaceName</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Aufzug</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/1/6 - Access and escape routes (3/3)" ifcVersion="IFC4" description="graphical assistance!" instructions="For places of assembly, all three specifications must be displayed together to check the requirements according to 2/1/6.">
+            <applicability minOccurs="0" maxOccurs="0">
+                 <entity>
+                    <name>
+                        <simpleValue>IFCFURNITURE</simpleValue>
+                    </name>
+                </entity>
+                <property>
+                    <propertySet>
+                        <simpleValue>WienBV_FurnitureTypeSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Ausstattungstyp</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Rollstuhl</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/2/2 - Ramps" ifcVersion="IFC4" description="graphical assistance!" instructions="Accessible ramps must fulfill the requirements according to 2/2/2.">
+            <applicability minOccurs="0" maxOccurs="0">
+                 <entity>
+                    <name>
+                        <simpleValue>IFCRAMP</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>HandicapAccesible</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/3/1 - Elevators" ifcVersion="IFC4" description="graphical assistance!" instructions="Elevatos must fulfill the requirements according to 2/3/1.">
+            <applicability minOccurs="0" maxOccurs="0">
+                 <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property>
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SpaceName</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Aufzug</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/7/1 - DoorwayClearenceWidth" ifcVersion="IFC4" description="fully automated!">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLENGTHMEASURE"> 
+                    <propertySet>
+                        <simpleValue>WienBV_DoorSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>DurchgangslichteBreite</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0.8" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/7/2 - DoorwayClearenceHeight" ifcVersion="IFC4" description="fully automated!">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLENGTHMEASURE"> 
+                    <propertySet>
+                        <simpleValue>WienBV_DoorSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>DurchgangslichteHoehe</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="2" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/9/1 - Additional requirements for handicap accessible doors" ifcVersion="IFC4" description="fully automated!">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>HandicapAccessible</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLENGTHMEASURE"> 
+                    <propertySet>
+                        <simpleValue>WienBV_DoorSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>DurchgangslichteBreite</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0.8" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 2/10/3 - Maximum incline of vehicle ramps" ifcVersion="IFC4" description="graphical assistance!" instructions="Vehicle ramps must fulfill the requirements according to 2/10/3.">
+            <applicability minOccurs="0" maxOccurs="0" >
+                 <entity>
+                    <name>
+                        <simpleValue>IFCRAMP</simpleValue>
+                    </name>
+                </entity>
+            </applicability>         
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 3/2/2 - Maximum number of steps and landings in a staircase (1/2)" ifcVersion="IFC4" description="partially automated!">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSTAIR</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_StairSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>TypeOfStair</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Haupttreppe</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+                <property dataType="IFCCOUNTMEASURE">
+                    <propertySet>
+                        <simpleValue>Pset_StairCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NumberOfRiser</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:double">
+                            <xs:maxInclusive value="20" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 3/2/2 - Maximum number of steps and landings in a staircase (2/2)" ifcVersion="IFC4" description="graphical assistance!" instructions="Landings in a staircase must fulfill the requirements according to 3/2/2.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSTAIR</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_StairSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>TypeOfStair</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Haupttreppe</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 3/2/4 - Straight main staircases" ifcVersion="IFC4" description="graphical assistance!" instructions="Straight main staircases must fulfill the requirements according to 3/2/4.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSTAIR</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_StairSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>TypeOfStair</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Haupttreppe</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 5/1/1 - Glass doors and glazing without fall protection function" ifcVersion="IFC4" description="graphical assistance!" instructions="Glass doors and glazing must fulfill the requirements according to 5/1/1.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="IFCDOOR" />
+                            <xs:enumeration value="IFCWINDOW" />
+                            <xs:enumeration value="IFCCURTAINWALL" />
+                        </xs:restriction>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="WienBV_.*Specific"/>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Verglasungsart</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="ND" />
+                            <xs:enumeration value="VSG" />
+                            <xs:enumeration value="ESG" />
+                            <xs:enumeration value="TVG" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 5/1/2 - Glass doors and glazing without fall protection function" ifcVersion="IFC4" description="graphical assistance!" instructions="Glass doors and glazing must fulfill the requirements according to 5/1/2.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="IFCDOOR" />
+                            <xs:enumeration value="IFCWINDOW" />
+                            <xs:enumeration value="IFCCURTAINWALL" />
+                        </xs:restriction>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="WienBV_.*Specific"/>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Verglasungsart</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="ND" />
+                            <xs:enumeration value="VSG" />
+                            <xs:enumeration value="ESG" />
+                            <xs:enumeration value="TVG" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 7/1/2 - Handicapped-accessible restrooms" ifcVersion="IFC4" description="graphical assistance!" instructions="Handicapped-accessible restrooms must fulfill the requirements according to 7/1/2.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL" >
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SpaceName</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Toilette Barrierefreie</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 4 7/1/3 - Handicapped-accessible restrooms" ifcVersion="IFC4" description="graphical assistance!" instructions="Handicapped-accessible restrooms must fulfill the requirements according to 7/1/3.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL" >
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SpaceName</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Toilette Barrierefreie</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification> 
+        <specification name="OIB 4 7/4/2 - Handicapped-accessible residential buildings" ifcVersion="IFC4" description="graphical assistance!" instructions="Adaptable apartments in handicapped-accessible residential buildings must fulfill the requirements according to 7/4/2.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>HandicapAccessible</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>WidmungBehoerde</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Wohnen und Aufenthalt</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification> 
+        <specification name="OIB 4 7/5/3 - Handicapped-accessible non-residential buildings" ifcVersion="IFC4" description="graphical assistance!" instructions="Depending on their size, meeting venues must have a sufficient number of wheelchair spaces available in accordance to 7/5/3.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCFURNITURE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_FurnitureTypeSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>AusstattungTyp</simpleValue>
+                    </baseName>
+                    <value>
+                       <simpleValue>Rollstuhl</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>        
+    </specifications>
+</ids>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IDS for checking OIB 2.3 5 with standard IDS</title>
+        <copyright>TU Wien</copyright>
+        <date>2025-10-15</date>
+    </info>
+    <specifications>
+        <specification name="OIB 2.3 5 - Buildings with an escape level of more than 90 m" ifcVersion="IFC4" description="graphical assistance!" instructions="The specifications relating to 2.3 Chapter 5 shall apply.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLENGTHMEASURE">
+                    <propertySet>
+                        <simpleValue>WienBV_BuildingStoreySpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>EscapeLevel</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:double">
+                            <xs:minExclusive value="90"/>
+                        </xs:restriction>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>  
+    </specifications>
+</ids>

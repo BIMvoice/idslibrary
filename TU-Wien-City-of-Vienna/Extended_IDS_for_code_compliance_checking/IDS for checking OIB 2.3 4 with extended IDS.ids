@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IDS for checking OIB 2.3 4 with extended IDS</title>
+        <copyright>TU Wien</copyright>
+        <date>2025-10-15</date>
+    </info>
+    <specifications>
+        <specification name="OIB 2.3 4/2/1 a) - Safety staircase category 2" ifcVersion="IFC4" description="fully automated!" instructions="Only to be checked if the escape level is more than 32 m and not more than 90 m">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SafetyStaircaseCategory</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>2</simpleValue>
+                        </value>
+                    </property>
+                </partOf>  
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsExternal</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>false</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Schleuse</simpleValue>
+                        </value>
+                    </property>
+                </partOf>  
+            </requirements>
+        </specification>
+        <specification name="OIB 2.3 4/2/2 a) - Safety staircase category 2" ifcVersion="IFC4" description="fully automated!" instructions="Only to be checked if the escape level is more than 32 m and not more than 90 m">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SafetyStaircaseCategory</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>2</simpleValue>
+                        </value>
+                    </property>
+                </partOf>  
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsExternal</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>false</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Schleuse</simpleValue>
+                        </value>
+                    </property>
+                </partOf>  
+            </requirements>
+        </specification>
+    </specifications>
+</ids>

@@ -18,7 +18,7 @@
       ],
       "published": "2026-01",
       "terms": "none stated",
-      "mirrored": false,
+      "mirrored": true,
       "contact": "BIM@banenor.no",
       "urls": [
         "https://www.banenor.no/leverandor/krav-og-sikkerhet/regler-og-arbeidsprosesser/bim-og-standardisering-i-jernbaneinfrastruktur/kim-prosjektet-strukturering-og-standardisering-av-informasjonsleveranser-i-utbyggingsprosjekter/"
@@ -65,7 +65,7 @@
       ],
       "published": "2026-06",
       "terms": "CC BY 4.0",
-      "mirrored": false,
+      "mirrored": true,
       "contact": null,
       "urls": [
         "https://github.com/DFE-EducationEstates/InformationModelAssurance"
@@ -88,7 +88,7 @@
       ],
       "published": "2025-10",
       "terms": "CC BY 4.0",
-      "mirrored": false,
+      "mirrored": true,
       "contact": null,
       "urls": [
         "https://researchdata.tuwien.ac.at/doi/10.48436/krhhx-xyz91",
@@ -114,7 +114,7 @@
       ],
       "published": "2025-11",
       "terms": "MIT",
-      "mirrored": false,
+      "mirrored": true,
       "contact": null,
       "urls": [
         "https://github.com/buildingSMART-Portugal/EIR-FaseProjeto-ObraPrivada",
@@ -141,7 +141,7 @@
       ],
       "published": null,
       "terms": "CC BY-ND 4.0",
-      "mirrored": false,
+      "mirrored": true,
       "contact": null,
       "urls": [
         "https://github.com/buildingSMART/IDS"

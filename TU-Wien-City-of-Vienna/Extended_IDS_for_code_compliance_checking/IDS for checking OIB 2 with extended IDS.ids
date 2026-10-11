@@ -1,0 +1,1536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IDS for checking OIB 2 with extended IDS</title>
+        <copyright>TU Wien</copyright>
+        <date>2025-10-15</date>
+    </info>
+    <specifications>
+        <specification name="OIB 2 3/1/1 - Fire compartments" ifcVersion="IFC4" description="graphical assistance!" instructions="The size of the fire compartments must be checked according to 3/1/1.">
+            <applicability>
+                <entity>
+                    <name>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="IFCWALL" />
+                            <xs:enumeration value="IFCSLAB" />
+                        </xs:restriction>
+                    </name>
+                </entity>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="Pset_.*Common"></xs:pattern>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Compartmentation</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/1/2 - Fire compartments" ifcVersion="IFC4" description="graphical assistance!" instructions="The size of the fire compartments must be checked according to 3/1/1.">
+            <applicability>
+                <entity>
+                    <name>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="IFCWALL" />
+                            <xs:enumeration value="IFCSLAB" />
+                        </xs:restriction>
+                    </name>
+                </entity>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>false</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="Pset_.*Common"></xs:pattern>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Compartmentation</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/1/6 - Openings in walls or slabs forming fire compartments" ifcVersion="IFC4" description="graphical assistance!" instructions="Any openings in walls or slabs that form fire compartments must fulfil the requirements according to 3/1/6.">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCOPENING</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELVOIDSELEMENT IFCRELFILLSELEMENT">
+                    <entity>
+                        <name>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="IFCWALL" />
+                                <xs:enumeration value="IFCSLAB" />
+                            </xs:restriction>
+                        </name>
+                    </entity>
+                    <property dataType="IFCBOOLEAN">
+                        <propertySet>
+                            <xs:restriction base="xs:string">
+                                <xs:pattern value="Pset_.*Common"></xs:pattern>
+                            </xs:restriction>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>Compartmentation</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/4/2 - Shafts, channels, pipes, and other fixtures" ifcVersion="IFC4" description="graphical assistance!" instructions="If shafts connect several floors, the walls must be constructed as partition walls in accordance with Table 1b.">
+            <applicability>
+                 <entity>
+                    <name>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="IFCWALL" />
+                            <xs:enumeration value="IFCCOVERING" />
+                        </xs:restriction>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Schacht</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/6/1 - Elevators" ifcVersion="IFC4" description="graphical assistance!" instructions="The requirements according to 3/6/1 concerning elevators connecting fire compartments must be fulfilled.">
+            <applicability>
+                <entity>
+                    <name>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="IFCWALL" />
+                            <xs:enumeration value="IFCSLAB" />
+                        </xs:restriction>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:pattern value="Aufzug*"/>
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="Pset_.*Common"/>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Compartmentation</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/9/2 - Rooms with an increased fire risk (1/3)" ifcVersion="IFC4" description="partially automated!" instructions="The requirements according to 3/9/2 for walls and slabs bounding rooms with an increased fire risk must be fulfilled.">
+            <applicability>
+                 <entity>
+                    <name>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="IFCWALL" />
+                            <xs:enumeration value="IFCSLAB" />
+                        </xs:restriction>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Abfallsammelraum" />
+                                <xs:enumeration value="Brennstofflager" />
+                                <xs:enumeration value="Batterieraum" />
+                                <xs:enumeration value="Müllraum" />
+                                <xs:enumeration value="Heizlager" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="Pset_.*Common"/>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="EI 90" />
+                                <xs:enumeration value="EI 120" />
+                                <xs:enumeration value="EI 180" />
+                                <xs:enumeration value="REI 90" />
+                                <xs:enumeration value="REI 120" />
+                                <xs:enumeration value="REI 180" />
+                            </xs:restriction>
+                        </value>
+                </property>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="Pset_.*Common"/>
+                        </xs:restriction>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SurfaceSpreadOfFlame</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>A2</simpleValue>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/9/2 - Rooms with an increased fire risk (2/3)" ifcVersion="IFC4" description="partially automated!" instructions="The requirements according to 3/9/2 for coverings bounding rooms with an increased fire risk must be fulfilled.">
+            <applicability>
+                 <entity>
+                    <name>
+                        <simpleValue>IFCCOVERING</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Abfallsammelraum" />
+                                <xs:enumeration value="Brennstofflager" />
+                                <xs:enumeration value="Batterieraum" />
+                                <xs:enumeration value="Müllraum" />
+                                <xs:enumeration value="Heizlager" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>Pset_CoveringCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SurfaceSpreadOfFlame</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>A2</simpleValue>
+                    </value>
+                </property>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>Pset_CoveringCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="EI 90" />
+                                <xs:enumeration value="EI 120" />
+                                <xs:enumeration value="EI 180" />
+                            </xs:restriction>
+                        </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/9/2 - Rooms with an increased fire risk (3/3)" ifcVersion="IFC4" description="graphical assistance!" instructions="The requirements according to 3/9/2 for openings bounding rooms with an increased fire risk must be fulfilled.">
+            <applicability>
+                 <entity>
+                    <name>
+                        <simpleValue>IFCOPENING</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Abfallsammelraum" />
+                                <xs:enumeration value="Brennstofflager" />
+                                <xs:enumeration value="Batterieraum" />
+                                <xs:enumeration value="Müllraum" />
+                                <xs:enumeration value="Heizlager" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/9/3 - Rooms with an increased fire risk (1/2 boiler rooms)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCCOVERING</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Brennstofflager" />
+                                <xs:enumeration value="Heizraum" />
+                                <xs:enumeration value="Heizlager" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>Pset_CoveringCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SurfaceSpreadOfFlame</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="A2fl" />
+                            <xs:enumeration value="A2" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/9/3 - Rooms with an increased fire risk (2/2 waste collection rooms and battery rooms)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCCOVERING</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>SpaceName</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Abfallsammelraum" />
+                                <xs:enumeration value="Batterieraum" />
+                                <xs:enumeration value="Müllraum" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>Pset_CoveringCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SurfaceSpreadOfFlame</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="A2fl" />
+                            <xs:enumeration value="A2" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 3/12/1 - Smoke extraction from underground floors" ifcVersion="IFC4" description="graphical assistance!" instructions="Suitable precautions according to 3/12/1 must be taken to allow smoke to escape to the outside.">
+            <applicability>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>false</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 5/3/6 - Corridors, stairs, and doors along escape routes" ifcVersion="IFC4" description="graphical assistance!" instructions="The requirements according to 5/3/6 for windows and doors opening onto open arcades must be fulfilled.">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCDOOR</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_DoorSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>IDNextDoor</simpleValue>
+                        </baseName>
+                    </property>
+                </partOf>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SpaceName</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>offener Laubengang</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 1.1 Walls of staircases in above-ground storeys (GK2)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>GK2</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="REI 180" />
+                            <xs:enumeration value="REI 120" />
+                            <xs:enumeration value="REI 90" />
+                            <xs:enumeration value="REI 60" />
+                            <xs:enumeration value="REI 30" />
+                            <xs:enumeration value="EI 180" />
+                            <xs:enumeration value="EI 120" />
+                            <xs:enumeration value="EI 90" />
+                            <xs:enumeration value="EI 60" />
+                            <xs:enumeration value="EI 30" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 1.1 Walls of staircases in above-ground storeys (GK3 + GK4)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf >
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="GK3" />
+                                <xs:enumeration value="GK4" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="REI 180" />
+                            <xs:enumeration value="REI 120" />
+                            <xs:enumeration value="REI 90" />
+                            <xs:enumeration value="REI 60" />
+                            <xs:enumeration value="EI 180" />
+                            <xs:enumeration value="EI 120" />
+                            <xs:enumeration value="EI 90" />
+                            <xs:enumeration value="EI 60" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 1.2 Walls of staircases in underground storeys (GK2)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>GK2</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>false</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI 60" />
+                            <xs:enumeration value="EI 90" />
+                            <xs:enumeration value="EI 120" />
+                            <xs:enumeration value="EI 180" />
+                            <xs:enumeration value="REI 60" />
+                            <xs:enumeration value="REI 90" />
+                            <xs:enumeration value="REI 120" />
+                            <xs:enumeration value="REI 180" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 1.2 Walls of staircases in underground storeys (GK3 + GK4)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="GK3" />
+                                <xs:enumeration value="GK4" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>false</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI 90" />
+                            <xs:enumeration value="EI 120" />
+                            <xs:enumeration value="EI 180" />
+                            <xs:enumeration value="REI 90" />
+                            <xs:enumeration value="REI 120" />
+                            <xs:enumeration value="REI 180" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 3.1 Doors of walls in staircases to flats, operational units or other rooms in above-ground storeys (GK2)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>GK2</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>NutzungseinheitGWR</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="ND" />
+                                <xs:enumeration value="Wohnung" />
+                                <xs:enumeration value="Büro" />
+                                <xs:enumeration value="Industrie und Lagerei" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                    <multiElementProcessing>differentElementsForEachProperty</multiElementProcessing>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI2 30" />
+                            <xs:enumeration value="EI2 60" />
+                            <xs:enumeration value="EI2 90" />
+                            <xs:enumeration value="EI2 30-C" />
+                            <xs:enumeration value="EI2 60-C" />
+                            <xs:enumeration value="EI2 90-C" />
+                            <xs:enumeration value="EI2 30-C-S200" />
+                            <xs:enumeration value="EI2 60-C-S200" />
+                            <xs:enumeration value="EI2 90-C-S200" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 3.1 Doors of walls in staircases to flats, operational units or other rooms in above-ground storeys (GK3)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>GK3</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>NutzungseinheitGWR</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="ND" />
+                                <xs:enumeration value="Wohnung" />
+                                <xs:enumeration value="Büro" />
+                                <xs:enumeration value="Industrie und Lagerei" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                    <multiElementProcessing>differentElementsForEachProperty</multiElementProcessing>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI2 30-C" />
+                            <xs:enumeration value="EI2 60-C" />
+                            <xs:enumeration value="EI2 90-C" />
+                            <xs:enumeration value="EI2 30-C-S200" />
+                            <xs:enumeration value="EI2 60-C-S200" />
+                            <xs:enumeration value="EI2 90-C-S200" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 3.1 Doors of walls in staircases to flats, operational units or other rooms in above-ground storeys (GK4)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>GK4</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>NutzungseinheitGWR</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="ND" />
+                                <xs:enumeration value="Wohnung" />
+                                <xs:enumeration value="Büro" />
+                                <xs:enumeration value="Industrie und Lagerei" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                    <multiElementProcessing>differentElementsForEachProperty</multiElementProcessing>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI2 30-C-S200" />
+                            <xs:enumeration value="EI2 60-C-S200" />
+                            <xs:enumeration value="EI2 90-C-S200" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 3.2 Doors of walls in staircases to corridors in above-ground storeys (GK3 + GK4)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="GK3" />
+                                <xs:enumeration value="GK4" />
+                            </xs:restriction>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>true</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>NutzungseinheitGWR</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>Verkehrsflaeche</simpleValue>
+                        </value>
+                    </property>
+                    <multiElementProcessing>differentElementsForEachProperty</multiElementProcessing>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI2 30-C" />
+                            <xs:enumeration value="EI2 60-C" />
+                            <xs:enumeration value="EI2 90-C" />
+                            <xs:enumeration value="EI2 30-C-Sm" />
+                            <xs:enumeration value="EI2 60-C-Sm" />
+                            <xs:enumeration value="EI2 90-C-Sm" />
+                            <xs:enumeration value="EI2 30-C-S200" />
+                            <xs:enumeration value="EI2 60-C-S200" />
+                            <xs:enumeration value="EI2 90-C-S200" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 3.3 Doors of walls in staircases to corridors and other rooms in underground storeys (GK2)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf >
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>GK2</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>false</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                    <multiElementProcessing>differentPropertyValuesForAnyElement</multiElementProcessing>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI2 30" />
+                            <xs:enumeration value="EI2 60" />
+                            <xs:enumeration value="EI2 90" />
+                            <xs:enumeration value="EI2 30-C" />
+                            <xs:enumeration value="EI2 60-C" />
+                            <xs:enumeration value="EI2 90-C" />
+                            <xs:enumeration value="EI2 30-C-S200" />
+                            <xs:enumeration value="EI2 60-C-S200" />
+                            <xs:enumeration value="EI2 90-C-S200" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 3.3 Doors of walls in staircases to corridors and other rooms in underground storeys (GK3)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf >
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>GK3</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>false</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                    <multiElementProcessing>differentPropertyValuesForAnyElement</multiElementProcessing>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI2 30-C" />
+                            <xs:enumeration value="EI2 60-C" />
+                            <xs:enumeration value="EI2 90-C" />
+                            <xs:enumeration value="EI2 30-C-S200" />
+                            <xs:enumeration value="EI2 60-C-S200" />
+                            <xs:enumeration value="EI2 90-C-S200" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2 - Table 2a - 3.3 Doors of walls in staircases to corridors and other rooms in underground storeys (GK4)" ifcVersion="IFC4" description="fully automated!">
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+                <partOf >
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDING</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_BuildingSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>BuildingClass</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>GK4</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf>
+                    <entity>
+                        <name>
+                            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLOGICAL">
+                        <propertySet>
+                            <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>AboveGround</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>false</simpleValue>
+                        </value>
+                    </property>
+                </partOf>
+                <partOf relation="IFCRELSPACEBOUNDARY">
+                    <entity>
+                        <name>
+                            <simpleValue>IFCSPACE</simpleValue>
+                        </name>
+                    </entity>
+                    <property dataType="IFCLABEL">
+                        <propertySet>
+                            <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                        </propertySet>
+                        <baseName>
+                            <simpleValue>StaircaseType</simpleValue>
+                        </baseName>
+                        <value>
+                            <simpleValue>OIB2Tab2ab</simpleValue>
+                        </value>
+                    </property>
+                    <multiElementProcessing>differentPropertyValuesForAnyElement</multiElementProcessing>
+                </partOf>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EI2 30-C-S200" />
+                            <xs:enumeration value="EI2 60-C-S200" />
+                            <xs:enumeration value="EI2 90-C-S200" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+    </specifications>
+</ids>

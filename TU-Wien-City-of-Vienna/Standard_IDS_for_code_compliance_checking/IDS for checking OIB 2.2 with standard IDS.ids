@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IDS for checking OIB 2.2 with standard IDS</title>
+        <copyright>TU Wien</copyright>
+        <date>2025-10-15</date>
+    </info>
+    <specifications>
+        <specification name="OIB 2.2 5/4/3 - Connection between garage floors or between the garage and other rooms" ifcVersion="IFC4" description="graphical assistance!" instructions="Garages with a total net floor area of more than 600 m² may only be connected to corridors or stairwells via airlocks. The requirements according to 5/4/3 must be fullfilled.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>KFZVerkehrsflaechenArt</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>Garage</simpleValue>
+                    </value>
+                </property>
+                <property dataType="IFCAREAMEASURE">
+                    <propertySet>
+                        <simpleValue>Qto_SpaceBaseQuantities</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NetFloorArea</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:double">
+                            <xs:minExclusive value="600" />
+                        </xs:restriction>
+                    </value>
+                </property> 
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+    </specifications>
+</ids>

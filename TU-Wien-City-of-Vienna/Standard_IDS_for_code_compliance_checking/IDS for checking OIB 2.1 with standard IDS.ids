@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IDS for checking OIB 2.1 with standard IDS</title>
+        <copyright>TU Wien</copyright>
+        <date>2025-10-15</date>
+    </info>
+    <specifications>
+        <specification name="OIB 2.1 3/7/1 - Smoke and heat extraction - Production and storage rooms" ifcVersion="IFC4" description="graphical assistance!" instructions="Smoke and heat extraction from production and storage rooms according to 3/7/1 must be provided.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>WidmungBehoerde</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                        <xs:enumeration value="Lagern, Verteilen und Verkaufen" />
+                        <xs:enumeration value="Betriebstechnische Anlagen" />
+                    </xs:restriction>
+                    </value>
+                </property>
+                <property dataType="IFCAREAMEASURE">
+                    <propertySet>
+                        <simpleValue>Qto_SpaceBaseQuantities</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NetFloorArea</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:double">
+                            <xs:minExclusive value="200" />
+                            <xs:maxInclusive value="1200" />
+                        </xs:restriction>
+                    </value>
+                </property> 
+            </applicability>
+            <requirements>  
+            </requirements>
+        </specification>
+        <specification name="OIB 2.1 3/7/2 - Smoke and heat extraction - Production and storage rooms" ifcVersion="IFC4" description="graphical assistance!" instructions="Smoke and heat extraction from production and storage rooms according to 3/7/2 must be provided.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>WidmungBehoerde</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                        <xs:enumeration value="Lagern, Verteilen und Verkaufen" />
+                        <xs:enumeration value="Betriebstechnische Anlagen" />
+                    </xs:restriction>
+                    </value>
+                </property>
+                <property dataType="IFCAREAMEASURE">
+                    <propertySet>
+                        <simpleValue>Qto_SpaceBaseQuantities</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NetFloorArea</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:double">
+                            <xs:minExclusive value="1200" />
+                            <xs:maxInclusive value="1800" />
+                        </xs:restriction>
+                    </value>
+                </property> 
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2.1 3/7/3 - Smoke and heat extraction - Production and storage rooms" ifcVersion="IFC4" description="graphical assistance!" instructions="Smoke and heat extraction from production and storage rooms according to 3/7/3 must be provided.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>WienBV_SpaceSpecific</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>WidmungBehoerde</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                        <xs:enumeration value="Lagern, Verteilen und Verkaufen" />
+                        <xs:enumeration value="Betriebstechnische Anlagen" />
+                    </xs:restriction>
+                    </value>
+                </property>
+                <property dataType="IFCAREAMEASURE">
+                    <propertySet>
+                        <simpleValue>Qto_SpaceBaseQuantities</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NetFloorArea</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:double">
+                            <xs:minExclusive value="1800" />
+                        </xs:restriction>
+                    </value>
+                </property> 
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2.1 3/8/2 - Fire walls (1/2)" ifcVersion="IFC4" description="partially automated!">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Compartmentation</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="REI 90" />         
+                            <xs:enumeration value="EI 90" />       
+                            <xs:enumeration value="REI 120" />             
+                            <xs:enumeration value="EI 120" />       
+                            <xs:enumeration value="REI 180" />             
+                            <xs:enumeration value="EI 180" />                      
+                        </xs:restriction>
+                    </value>
+                </property>
+                <property dataType="IFCLABEL">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SurfaceSpreadOfFlame</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>A2</simpleValue>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="OIB 2.1 3/8/2 - Fire walls (2/2)" ifcVersion="IFC4" description="graphical assistance!" instructions="If, in the event of a fire, mechanical stress is to be expected (e.g., due to collapsing storage facilities), fire walls must also meet the performance criteria 'M'.">
+            <applicability minOccurs="0" maxOccurs="0">
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Compartmentation</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>
+        <specification name="OIB 2.1 3/9/1 - Exterior walls and exterior wall coverings" ifcVersion="IFC4" description="graphical assistance!" instructions="The requirements for walls of industrial buildings with an exterior wall height of no more than 14 m must be fulfilled."> 
+            <applicability>
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+                <property dataType="IFCBOOLEAN">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsExternal</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>true</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+            </requirements>
+        </specification>  
+    </specifications>
+</ids>
