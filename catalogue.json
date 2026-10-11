@@ -22,7 +22,8 @@
       "contact": "BIM@banenor.no",
       "urls": [
         "https://www.banenor.no/leverandor/krav-og-sikkerhet/regler-og-arbeidsprosesser/bim-og-standardisering-i-jernbaneinfrastruktur/kim-prosjektet-strukturering-og-standardisering-av-informasjonsleveranser-i-utbyggingsprosjekter/"
-      ]
+      ],
+      "folder": "Bane-NOR"
     },
     {
       "publisher": "Statsbygg",
@@ -44,7 +45,8 @@
       "contact": "bim@statsbygg.no",
       "urls": [
         "https://simba.statsbygg.no/kravene/maskinvalid%C3%A9rbare-krav"
-      ]
+      ],
+      "folder": "Statsbygg"
     },
     {
       "publisher": "Department for Education",
@@ -67,7 +69,8 @@
       "contact": null,
       "urls": [
         "https://github.com/DFE-EducationEstates/InformationModelAssurance"
-      ]
+      ],
+      "folder": "UK-Department-for-Education"
     },
     {
       "publisher": "TU Wien, for the City of Vienna",
@@ -90,7 +93,8 @@
       "urls": [
         "https://researchdata.tuwien.ac.at/doi/10.48436/krhhx-xyz91",
         "https://researchdata.tuwien.at/records/yh1wr-8t679"
-      ]
+      ],
+      "folder": "TU-Wien-City-of-Vienna"
     },
     {
       "publisher": "buildingSMART Portugal",
@@ -115,7 +119,8 @@
       "urls": [
         "https://github.com/buildingSMART-Portugal/EIR-FaseProjeto-ObraPrivada",
         "https://github.com/buildingSMART-Portugal/EIR-FaseProjeto-ObraPublica"
-      ]
+      ],
+      "folder": "buildingSMART-Portugal"
     },
     {
       "publisher": "buildingSMART International",
@@ -140,7 +145,8 @@
       "contact": null,
       "urls": [
         "https://github.com/buildingSMART/IDS"
-      ]
+      ],
+      "folder": "buildingSMART-International"
     }
   ]
 }
