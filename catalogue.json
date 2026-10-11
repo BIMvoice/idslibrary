@@ -1,0 +1,146 @@
+{
+  "retrieved": "2026-10-11",
+  "note": "Counts, versions and terms as found on the retrieval date. The catalogue links to publishers and holds no copies of their files.",
+  "sources": [
+    {
+      "publisher": "Bane NOR",
+      "country": "Norway",
+      "sector": "Rail",
+      "title": "KIM 1.1.0 information requirements for development projects",
+      "coverage": "9 delivery stages, 6 disciplines",
+      "files": 54,
+      "ids_version": "1.0",
+      "ifc_versions": [
+        "IFC4X3_ADD2"
+      ],
+      "language": [
+        "Norwegian"
+      ],
+      "published": "2026-01",
+      "terms": "none stated",
+      "mirrored": false,
+      "contact": "BIM@banenor.no",
+      "urls": [
+        "https://www.banenor.no/leverandor/krav-og-sikkerhet/regler-og-arbeidsprosesser/bim-og-standardisering-i-jernbaneinfrastruktur/kim-prosjektet-strukturering-og-standardisering-av-informasjonsleveranser-i-utbyggingsprosjekter/"
+      ]
+    },
+    {
+      "publisher": "Statsbygg",
+      "country": "Norway",
+      "sector": "Public buildings",
+      "title": "SIMBA 2.1 requirement sets",
+      "coverage": "by stage and discipline; labelled experimental by the publisher",
+      "files": 48,
+      "ids_version": "0.9.6",
+      "ifc_versions": [
+        "IFC4"
+      ],
+      "language": [
+        "English"
+      ],
+      "published": "2024-02",
+      "terms": "none stated",
+      "mirrored": false,
+      "contact": "bim@statsbygg.no",
+      "urls": [
+        "https://simba.statsbygg.no/kravene/maskinvalid%C3%A9rbare-krav"
+      ]
+    },
+    {
+      "publisher": "Department for Education",
+      "country": "United Kingdom",
+      "sector": "School buildings",
+      "title": "Information model assurance checks",
+      "coverage": "RIBA stages 3, 4 and 5",
+      "files": 1868,
+      "ids_version": "1.0",
+      "ifc_versions": [
+        "IFC2X3",
+        "IFC4"
+      ],
+      "language": [
+        "English"
+      ],
+      "published": "2026-06",
+      "terms": "CC BY 4.0",
+      "mirrored": false,
+      "contact": null,
+      "urls": [
+        "https://github.com/DFE-EducationEstates/InformationModelAssurance"
+      ]
+    },
+    {
+      "publisher": "TU Wien, for the City of Vienna",
+      "country": "Austria",
+      "sector": "Building permits",
+      "title": "OIB 2 building code checks for permit models",
+      "coverage": "research data; some files use extensions beyond IDS 1.0",
+      "files": 16,
+      "ids_version": "1.0",
+      "ifc_versions": [
+        "IFC4"
+      ],
+      "language": [
+        "English"
+      ],
+      "published": "2025-10",
+      "terms": "CC BY 4.0",
+      "mirrored": false,
+      "contact": null,
+      "urls": [
+        "https://researchdata.tuwien.ac.at/doi/10.48436/krhhx-xyz91",
+        "https://researchdata.tuwien.at/records/yh1wr-8t679"
+      ]
+    },
+    {
+      "publisher": "buildingSMART Portugal",
+      "country": "Portugal",
+      "sector": "Private and public works",
+      "title": "Exchange information requirements for the design stage",
+      "coverage": "by discipline",
+      "files": 12,
+      "ids_version": "1.0",
+      "ifc_versions": [
+        "IFC4",
+        "IFC2X3"
+      ],
+      "language": [
+        "Portuguese",
+        "English"
+      ],
+      "published": "2025-11",
+      "terms": "MIT",
+      "mirrored": false,
+      "contact": null,
+      "urls": [
+        "https://github.com/buildingSMART-Portugal/EIR-FaseProjeto-ObraPrivada",
+        "https://github.com/buildingSMART-Portugal/EIR-FaseProjeto-ObraPublica"
+      ]
+    },
+    {
+      "publisher": "buildingSMART International",
+      "country": "International",
+      "sector": "Examples",
+      "title": "Example IDS files that accompany the standard",
+      "coverage": "folder Documentation/Examples",
+      "files": 12,
+      "ids_version": "1.0",
+      "ifc_versions": [
+        "IFC2X3",
+        "IFC4",
+        "IFC4X3_ADD2"
+      ],
+      "language": [
+        "English",
+        "Dutch"
+      ],
+      "published": null,
+      "terms": "CC BY-ND 4.0",
+      "mirrored": false,
+      "contact": null,
+      "urls": [
+        "https://github.com/buildingSMART/IDS"
+      ]
+    }
+  ]
+}
