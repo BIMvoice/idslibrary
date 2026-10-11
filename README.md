@@ -16,8 +16,11 @@ This library collects them in one place. There is one folder per publisher. Each
 | [TU Wien, for the City of Vienna](TU-Wien-City-of-Vienna/) | Austria | Building permits | OIB 2 building code checks for permit models | 16 | 1.0 | CC BY 4.0 |
 | [buildingSMART Portugal](buildingSMART-Portugal/) | Portugal | Private and public works | Exchange information requirements for the design stage | 12 | 1.0 | MIT |
 | [buildingSMART International](buildingSMART-International/) | International | Examples | Example IDS files that accompany the standard | 12 | 1.0 | CC BY-ND 4.0 |
+| [BIMcollab](BIMcollab/) | Netherlands | Software vendor | IDS templates for the Basic IDM check and the Dutch BIM basis ILS | 6 | older than 1.0 | None stated |
+| [Municipality of Rotterdam](Municipality-of-Rotterdam/) | Netherlands | Building permits | IDS used by the municipality's permit check service | 1 | older than 1.0 | None stated |
+| [Molio](Molio/) | Denmark | Example | Molio example IDS from the buildingSMART community sample files | 1 | older than 1.0 | CC BY 4.0 |
 
-Each folder holds the files and a page that explains the set and links to the publisher. Statsbygg's folder holds the explanation and the link only, for now.
+Each folder holds the files and a page that explains the set and links to the publisher.
 
 Counts, versions and terms are as found on 11 October 2026. Publishers change their pages: follow the link for the current state, and tell us when a row is out of date.
 
@@ -25,6 +28,15 @@ Counts, versions and terms are as found on 11 October 2026. Publishers change th
 
 - **A named licence** (for example CC BY 4.0) means the publisher allows copying and reuse under that licence. Read the licence before you redistribute.
 - **None stated** means the publisher has made the files available to download but has not said that others may republish them. Where such files are copied here, they are unchanged, they remain the publisher's, the folder says so, and they will be removed if the publisher asks.
+
+## Known, not included
+
+These exist, but the copies found are held by a third party and not by the organisation that owns the content, or they are personal and teaching examples. They are listed so that you know about them; follow the links.
+
+- **Dutch "ILS voor Ruimten in de omgevingswet" (VNG, digiGO):** 42 IDS 1.0 files found as data inside [peterrdf/VNG](https://github.com/peterrdf/VNG), and two more in [imagemnl/IMAGEM-GeoBIM-IDS](https://github.com/imagemnl/IMAGEM-GeoBIM-IDS). No original published by the owner was found.
+- **Dutch BIM basis ILS and RVB BIM Norm:** conversions in [OpenAEC-Foundation/OpenAEC-BIM-validator](https://github.com/OpenAEC-Foundation/OpenAEC-BIM-validator). digiGO's own [ILS configurator](https://www.digigo.nu/ilsen-en-richtlijnen/ils-configurator/) says it can export IDS.
+- **VSK Software:** 17 tutorial rule files in [VSK-Software-GmbH/BIM.permit-IDS-repository](https://github.com/VSK-Software-GmbH/BIM.permit-IDS-repository).
+- **Personal and conference examples:** [GeotechnicalBIM](https://github.com/GeotechnicalBIM/Fachsektionstage2025_Qualitaet_FM_Baugrund), [miniGIM](https://github.com/minimum-information-models/miniGIM), [PeterSimanek](https://github.com/PeterSimanek/IDS-in-Open-BIM-Workflow-Potential-Limitations), [sthebigai](https://github.com/sthebigai/IDS_Norma-de-Objetos-BIM), [RickBrice/Signs](https://github.com/RickBrice/Signs).
 
 ## What is planned
 

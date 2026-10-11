@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ids xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://standards.buildingsmart.org/IDS">
+  <info>
+    <title>DE_BIM ILH-Grundlagen Kontrolle</title>
+    <description>Beispiel IDS für die Modellvalidierung gemäß Die Spezifikation für die Lieferung von BIM-Basisinformationen.</description>
+    <author>sgolchinfar@bimcollab.com</author>
+    <date>2024-10-29</date>
+    <purpose>Geben Sie eine Reihe von Vereinbarungen an, die IFC-Modelle gemäß dem ILH-Grundlagen erfüllen müssen.</purpose>
+  </info>
+  <specifications>
+    <specification name="(3.3) Geschosseinteilung und -benennung" description="Prüfen Sie, ob jedes Modell eine einheitliche Namenskonvention für die Geschosse verwendet  &#xA;&#xA;[ 1. Füllen Sie die Werte auf der Basis der Geschossnamenstruktur Ihres Projekts ein ]" ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <entity>
+          <name>
+            <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <attribute>
+          <name>
+            <simpleValue>Name</simpleValue>
+          </name>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="00 *" />
+              <xs:enumeration value="-01 *" />
+              <xs:enumeration value="01 *" />
+              <xs:enumeration value="02 *" />
+              <xs:enumeration value="03 *" />
+            </xs:restriction>
+          </value>
+        </attribute>
+      </requirements>
+    </specification>
+    <specification name="(3.4) Korrekte Verwendung von Entitäten" description="Verwenden Sie diese Spezifikation, um eine Liste aller IfcBuildingElementProxy-Elemente in Ihrem Modell zu erhalten. Es ist wichtig, die geeignetste IFC-Klasse für Ihre Elemente auszuwählen und die Verwendung von IfcBuildingElementProxy nach Möglichkeit zu vermeiden." ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <entity>
+          <name>
+            <simpleValue>IFCBUILDINGELEMENTPROXY</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <attribute>
+          <name>
+            <simpleValue>GlobalId</simpleValue>
+          </name>
+          <value>
+            <simpleValue>?</simpleValue>
+          </value>
+        </attribute>
+      </requirements>
+    </specification>
+    <specification name="(3.5) Struktur und Benennung" description="Achten Sie darauf, Komponenten einheitliche Namen zu geben   &#xA;&#xA;[ 1. Verwenden Sie den Abschnitt 'IFC-Element', um die IFC-Klasse auszuwählen, die Sie testen möchten. Dieses Beispiel bezieht sich auf die Namensgebung von Türen.  &#xA;&#xA;2. Geben Sie unter dem Abschnitt 'Wert' Ihre projektspezifische Namensstruktur ein ]" ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <entity>
+          <name>
+            <simpleValue>IFCDOOR</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <attribute>
+          <name>
+            <simpleValue>Name</simpleValue>
+          </name>
+          <value>
+            <simpleValue>Type ??.*</simpleValue>
+          </value>
+        </attribute>
+      </requirements>
+    </specification>
+    <specification name="(3.6) Klassifizierungssystem" description="Weisen Sie Objekten immer einen Klassifizierungscode zu, der der letzten öffentlichen Version des jeweiligen Standards entspricht &#xA;&#xA;[ 1. Geben Sie unter 'Klassifizierungssystem' den Namen der in Ihrem Projekt verwendeten Klassifizierung ein. Stellen Sie sicher, dass Sie keine beliebige Option für BIMcollab ZOOM-Validierungen verwenden ]" ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <attribute>
+          <name>
+            <simpleValue>GlobalId</simpleValue>
+          </name>
+        </attribute>
+      </applicability>
+      <requirements>
+        <classification>
+          <system>
+            <simpleValue>NL/SfB (4 cijfers)</simpleValue>
+          </system>
+        </classification>
+      </requirements>
+    </specification>
+    <specification name="(4.1) Räume" description="Überprüfen Sie die Attribute 'Name' und 'LongName' sowie das Vorhandensein von Basismengen, um sicherzustellen, dass IfcSpaces korrekt benannt sind und alle erforderlichen Daten für die Mengenermittlung enthalten." ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <entity>
+          <name>
+            <simpleValue>IFCSPACE</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <attribute>
+          <name>
+            <simpleValue>Name</simpleValue>
+          </name>
+        </attribute>
+        <attribute>
+          <name>
+            <simpleValue>LongName</simpleValue>
+          </name>
+        </attribute>
+        <property>
+          <propertySet>
+            <simpleValue>BaseQuantities</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>NetFloorArea</simpleValue>
+          </baseName>
+        </property>
+        <property>
+          <propertySet>
+            <simpleValue>BaseQuantities</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Height</simpleValue>
+          </baseName>
+        </property>
+        <property>
+          <propertySet>
+            <simpleValue>BaseQuantities</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>NetVolume</simpleValue>
+          </baseName>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="(4.3) Tragend / Nicht tragend" description="Gibt an, ob die Eigenschaft LoadBearing für IfcWall-Elemente als TRUE/FALSE definiert ist. &#xA;&#xA;[ 1. Verwenden Sie den Abschnitt 'IFC Element', um die IFC-Klasse auszuwählen, die Sie überprüfen möchten. Dieses Beispiel betrifft Wandelemente.  &#xA;&#xA;2. Sofern erforderlich, duplizieren Sie diese Spezifikation, um weitere IFC-Klassen zu überprüfen. Verwenden Sie z. B. IfcSlab, um alle Geschossdecken zu überprüfen ]" ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <entity>
+          <name>
+            <simpleValue>IFCWALL</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <property>
+          <propertySet>
+            <simpleValue>Pset_WallCommon</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>LoadBearing</simpleValue>
+          </baseName>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="(4.4) Intern / Extern" description="Gibt an, ob die Eigenschaft IsExternal als TRUE/FALSE für IfcWall-Elemente definiert ist. &#xA;&#xA;[ 1. Verwenden Sie den Abschnitt 'IFC Element', um die IFC-Klasse auszuwählen, die Sie überprüfen möchten. Dieses Beispiel betrifft Wandelemente.   &#xA;&#xA;2. Falls erforderlich, duplizieren Sie diese Spezifikation, um weitere IFC-Klassen zu überprüfen ]" ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <entity>
+          <name>
+            <simpleValue>IFCWALL</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <property>
+          <propertySet>
+            <simpleValue>Pset_WallCommon</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>IsExternal</simpleValue>
+          </baseName>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="(4.5) Brandschutz" description="Stellt sicher, dass die Brandschutzwerte für tragende Innenwände ausreichend sind. &#xA;&#xA;[ 1. Verwenden Sie die Abschnitte 'Property set' und 'Property name', falls Sie die zu prüfenden Elemente ändern möchten. In diesem Beispiel wird nach tragenden Innenwandelementen gesucht. &#xA;&#xA;2. Geben Sie im Feld 'Wert' die gewünschte Feuerwiderstandsklasse an ]" ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <property>
+          <propertySet>
+            <simpleValue>Pset_WallCommon</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>IsExternal</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>False</simpleValue>
+          </value>
+        </property>
+        <property>
+          <propertySet>
+            <simpleValue>Pset_WallCommon</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>LoadBearing</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>True</simpleValue>
+          </value>
+        </property>
+      </applicability>
+      <requirements>
+        <property>
+          <propertySet>
+            <simpleValue>Pset_WallCommon</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>FireRating</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>30</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="(4.6) Bauphysikalische Eigenschaften (Wärmedurchgangskoeffizient)" description="Überprüft das Vorhandensein von bauphysikalischen Eigenschaften in den ausgewählten Elementen. Hier wird geprüft, ob die ThermalTransmittance-Werte (U-Wert) für Wandelemente definiert sind. Andere Beispiele für gängige bauphysikalische Eigenschaften sind AcousticRating (Schallschutz), SolarHeatGainTransmittance (SGGC-Wert) und Translucency (Lichtdurchlässigkeit). &#xA;&#xA;[ 1. Verwenden Sie die Abschnitte 'Property set' und 'Property Name', um die zu prüfenden IFC-Klassen und bauphysikalischen Eigenschaften zu ändern ]" ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <property>
+          <propertySet>
+            <simpleValue>Pset_WallCommon</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>IsExternal</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>True</simpleValue>
+          </value>
+        </property>
+      </applicability>
+      <requirements>
+        <property>
+          <propertySet>
+            <simpleValue>Pset_WallCommon</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Thermal Transmitance</simpleValue>
+          </baseName>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="(4.7.1) Material" description="Ermitteln Sie, welchen Komponenten keine Materialwerte zugeordnet sind." ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <attribute>
+          <name>
+            <simpleValue>GlobalId</simpleValue>
+          </name>
+        </attribute>
+      </applicability>
+      <requirements>
+        <material />
+      </requirements>
+    </specification>
+    <specification name="(4.7.2) Spezifische Materialien" description="Geben Sie die Materialien an, die ausgewählte Elemente haben sollten. Dieses Beispiel zeigt eine Liste von Materialien für tragende Wandelemente. &#xA;&#xA;[ 1. Benutzen Sie den Abschnitt 'IFC Element', um die IFC Klasse auszuwählen, die Sie überprüfen möchten.   &#xA;&#xA;2. Ändern Sie die Werte von 'Property set' und 'Property name', um die Elemente der ausgewählten IFC-Klasse zu filtern.   &#xA;&#xA;3. Geben Sie unter 'Values' eine Liste der zugelassenen Materialien an ]" ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <entity>
+          <name>
+            <simpleValue>IFCWALL</simpleValue>
+          </name>
+        </entity>
+        <property>
+          <propertySet>
+            <simpleValue>Pset_WallCommon</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>LoadBearing</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>True</simpleValue>
+          </value>
+        </property>
+      </applicability>
+      <requirements>
+        <material>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Concrete" />
+              <xs:enumeration value="Limestone" />
+              <xs:enumeration value="Stone - limestone" />
+              <xs:enumeration value="Reinforced concrete - prefab" />
+            </xs:restriction>
+          </value>
+        </material>
+      </requirements>
+    </specification>
+    <specification name="(4.8) Projektspezifische Eigenschaften" description="Ermitteln Sie, ob die benutzerdefinierten Eigenschaften in den ausgewählten Elementen gemäss Ihren Projektanforderungen vorhanden sind. &#xA;&#xA;[ 1. Verwenden Sie den Abschnitt 'IFC-Element', um die IFC-Klasse auszuwählen, die Sie überprüfen möchten.   &#xA;&#xA;2. Ändern Sie die Werte von 'Property set' und 'Property name', um Ihre benutzerdefinierten Eigenschaften anzugeben ]" ifcVersion="IFC2X3">
+      <applicability minOccurs="0">
+        <entity>
+          <name>
+            <simpleValue>IFCFLOWSEGMENT</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <property>
+          <propertySet>
+            <simpleValue>AC_Pset_RenovationAndPhasing</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Renovation Status</simpleValue>
+          </baseName>
+        </property>
+      </requirements>
+    </specification>
+  </specifications>
+</ids>

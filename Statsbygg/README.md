@@ -2,9 +2,15 @@
 
 SIMBA 2.1 requirement sets.
 
-## Where to get the files
+## The publisher's own page
 
 - [Statsbygg SIMBA, machine-checkable requirements](https://simba.statsbygg.no/kravene/maskinvalid%C3%A9rbare-krav)
+
+## Files in this folder
+
+`SIMBA-2.1/` holds the 48 IDS files of SIMBA 2.1, unchanged, in the publisher's folder layout and with the publisher's file names. The publisher labels them experimental and for test purposes.
+
+**These are Statsbygg's files, copied here unchanged for convenience.** All rights remain with Statsbygg. Statsbygg states no licence for reuse, so take Statsbygg's page as the authoritative and current source and ask Statsbygg before republishing them elsewhere. They are not endorsed by Statsbygg as hosted here. If Statsbygg asks, they will be removed.
 
 ## Facts
 
@@ -26,7 +32,7 @@ As found on 11 October 2026. Follow the link for the current state.
 
 ## Terms for reuse
 
-The publisher's page states no licence or terms for reuse. Download the files from the publisher and use them as the publisher intends. Ask the publisher before republishing them. That is why this folder holds a description and a link, and no copies.
+Statsbygg's page states no licence or terms for reuse. The copies in this folder are provided for convenience and remain Statsbygg's.
 
 ## Using these files
 

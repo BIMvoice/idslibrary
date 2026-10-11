@@ -41,7 +41,7 @@
       ],
       "published": "2024-02",
       "terms": "none stated",
-      "mirrored": false,
+      "mirrored": true,
       "contact": "bim@statsbygg.no",
       "urls": [
         "https://simba.statsbygg.no/kravene/maskinvalid%C3%A9rbare-krav"
@@ -147,6 +147,78 @@
         "https://github.com/buildingSMART/IDS"
       ],
       "folder": "buildingSMART-International"
+    },
+    {
+      "publisher": "BIMcollab",
+      "country": "Netherlands",
+      "sector": "Software vendor",
+      "title": "IDS templates for the Basic IDM check and the Dutch BIM basis ILS",
+      "coverage": "one template per language: English, Dutch, German, Spanish, French, Portuguese",
+      "files": 6,
+      "ids_version": "older than 1.0",
+      "ifc_versions": [
+        "IFC2X3"
+      ],
+      "language": [
+        "English",
+        "Dutch",
+        "German",
+        "Spanish",
+        "French",
+        "Portuguese"
+      ],
+      "published": "2025-09",
+      "terms": "none stated",
+      "mirrored": true,
+      "contact": null,
+      "folder": "BIMcollab",
+      "urls": [
+        "https://helpcenter.bimcollab.com/en/articles/326911-importing-and-editing-ids-templates-in-bimcollab"
+      ]
+    },
+    {
+      "publisher": "Municipality of Rotterdam",
+      "country": "Netherlands",
+      "sector": "Building permits",
+      "title": "IDS used by the municipality's permit check service",
+      "coverage": "one file, 19 specifications",
+      "files": 1,
+      "ids_version": "older than 1.0",
+      "ifc_versions": [],
+      "language": [
+        "Dutch"
+      ],
+      "published": null,
+      "terms": "none stated",
+      "mirrored": true,
+      "contact": null,
+      "folder": "Municipality-of-Rotterdam",
+      "urls": [
+        "https://github.com/Municipality-of-Rotterdam/Vergunning-Controle-Service"
+      ]
+    },
+    {
+      "publisher": "Molio",
+      "country": "Denmark",
+      "sector": "Example",
+      "title": "Molio example IDS from the buildingSMART community sample files",
+      "coverage": "one file, 4 specifications",
+      "files": 1,
+      "ids_version": "older than 1.0",
+      "ifc_versions": [
+        "IFC2X3"
+      ],
+      "language": [
+        "English"
+      ],
+      "published": "2024-11",
+      "terms": "CC BY 4.0",
+      "mirrored": true,
+      "contact": null,
+      "folder": "Molio",
+      "urls": [
+        "https://github.com/buildingsmart-community/Community-Sample-Test-Files"
+      ]
     }
   ]
 }
